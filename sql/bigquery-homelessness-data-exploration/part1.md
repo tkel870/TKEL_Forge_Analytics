@@ -52,3 +52,20 @@ support:
 
 A new table was created to streamline analysis and add a state-level identifier
 derived from the Continuum of Care number.
+
+
+SQL Function Explanation
+
+The LEFT() function extracts a specified number of characters from the beginning
+of a string. In this query:
+
+LEFT(CoC_Number, 2) AS State
+
+
+This creates a new column named State containing the first two characters of
+the CoC_Number, which correspond to the state abbreviation.
+
+Step 4: Data Validation
+
+After creating the new table, the Preview tab was used to confirm that all
+columns appeared correctly and the data was structured as expected.
