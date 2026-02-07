@@ -7,23 +7,31 @@ The objective was to simulate a real-world business analytics engagement by iden
 
 The analysis demonstrates an end-to-end workflow from raw data ingestion and cleaning through executive-level insight generation and visualization.
 
-## Interactive Tableau Dashboard
+Interactive Tableau Dashboard
 
 View the live executive dashboard here:
 🔗 https://public.tableau.com/app/profile/tricia.bleavins/viz/ExecutiveProfitabilityAnalysisDashboard/ExecutiveProfitabilityAnalysisDashboard
 
 This interactive dashboard presents:
-- Profitability by category and sub-category
-- Customer risk and unprofitable accounts
-- Revenue and profit performance overview
-- Executive-level KPI summary
+
+Profitability by category and sub-category
+
+Customer risk and unprofitable accounts
+
+Revenue and profit performance overview
+
+Executive-level KPI summary
 
 Tools & Technologies
 
 SQL (SQLite) — data cleaning, transformation, KPI analysis
+
 Python (pandas) — profitability modeling, Pareto analysis, customer risk scoring
-Excel / Spreadsheets — executive summary modeling
+
+Excel / Google Sheets — executive modeling and validation
+
 Tableau — executive dashboard & visualization
+
 GitHub — version control & portfolio presentation
 
 Dataset
@@ -69,6 +77,24 @@ Converted currency fields to numeric
 Built clean analytical dataset for modeling
 
 This mirrors real-world analyst workflows where raw data is preserved and cleaned views are used for analysis.
+
+Spreadsheet Analysis (Excel / Google Sheets)
+
+Spreadsheets were used to build an executive-facing profitability model and validate SQL outputs.
+
+Key spreadsheet work included:
+
+Revenue and profit validation against SQL results
+
+Category and sub-category profitability summaries
+
+Customer-level profit analysis
+
+Executive KPI summary sheet
+
+Structured analysis designed for business stakeholders
+
+This step ensured calculations were cross-validated and presented in a format accessible to non-technical decision-makers, mirroring real-world business analyst workflows.
 
 Executive KPI Snapshot
 
@@ -124,24 +150,10 @@ executive_profitability_project
 │
 ├── README.md
 ├── sql/
-│   ├── data_cleaning_and_views.sql
-│   ├── executive_kpis.sql
-│   ├── loss_driver_analysis.sql
-│   └── customer_risk_analysis.sql
-│
 ├── python/
-│   └── python_analysis.py
-│
 ├── data/
-│   └── clean_orders_num.csv
-│
 ├── outputs/
-│   ├── customer_risk_table.csv
-│   ├── top_50_products_by_profit.csv
-│   └── worst_20_customers.csv
-│
 └── tableau/
-    └── dashboard_link.txt
 
 Business Impact
 
@@ -159,5 +171,6 @@ Support executive decision-making with data
 
 Author
 
-Tricia Bleavins (tkel870)
+Tricia Bleavins
 Data Analytics | SQL | Python | Tableau | Business Intelligence
+GitHub: https://github.com/tkel870
