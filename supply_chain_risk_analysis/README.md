@@ -1,5 +1,14 @@
 🏭 Heavy Equipment Supply Chain & Production Risk Analysis
 Cost Drivers • Supplier Risk • Production Downtime Intelligence
+
+## Executive Summary
+
+This project delivers an end-to-end supply chain and production risk analysis within a simulated heavy equipment manufacturing environment. The analysis identifies high-impact cost drivers, supplier risk concentration, and production downtime patterns affecting operational efficiency and financial performance.
+
+Using SQL, Python, and Tableau, production and supplier data were transformed into executive-level insights to support data-driven procurement, supplier management, and operational strategy decisions.
+
+Key findings show that a concentrated group of components and suppliers drives the majority of downtime, defects, and cost exposure, presenting clear opportunities for targeted risk reduction and performance improvement.
+
 📊 Project Overview
 
 This project analyzes manufacturing supply chain and production data to identify cost drivers, high-risk suppliers, and operational disruption patterns within a heavy equipment production environment.
