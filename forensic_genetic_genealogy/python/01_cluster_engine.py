@@ -1,10 +1,9 @@
-import sqlite3
 import pandas as pd
 import networkx as nx
 from community import community_louvain
+from db_connect import get_connection
 
-print("Connecting to database...")
-conn = sqlite3.connect("bayou_doe.db")
+conn = get_connection()
 
 # Load shared match edges
 print("Loading shared match network...")

@@ -1,0 +1,33 @@
+cluster_id,state,parish_or_county,place_name,lat,lon,people_count
+0,LA,Lafayette Parish,Lafayette,30.2241,-92.0198,44
+0,LA,Ouachita Parish,Monroe,32.5093,-92.1193,36
+0,LA,St. Tammany Parish,Covington,30.4755,-90.1009,33
+0,LA,Calcasieu Parish,Lake Charles,30.2266,-93.2174,32
+0,LA,East Baton Rouge Parish,Baton Rouge,30.4515,-91.1871,32
+0,LA,Orleans Parish,New Orleans,29.9511,-90.0715,27
+0,LA,Terrebonne Parish,Houma,29.5958,-90.7195,26
+0,LA,Rapides Parish,Alexandria,31.3113,-92.4451,23
+1,LA,Terrebonne Parish,Houma,29.5958,-90.7195,35
+1,LA,East Baton Rouge Parish,Baton Rouge,30.4515,-91.1871,33
+1,LA,Ouachita Parish,Monroe,32.5093,-92.1193,33
+1,LA,Calcasieu Parish,Lake Charles,30.2266,-93.2174,31
+1,LA,Rapides Parish,Alexandria,31.3113,-92.4451,31
+1,LA,St. Tammany Parish,Covington,30.4755,-90.1009,28
+1,LA,Orleans Parish,New Orleans,29.9511,-90.0715,26
+1,LA,Lafayette Parish,Lafayette,30.2241,-92.0198,25
+2,LA,St. Tammany Parish,Covington,30.4755,-90.1009,26
+2,LA,Terrebonne Parish,Houma,29.5958,-90.7195,25
+2,LA,Rapides Parish,Alexandria,31.3113,-92.4451,23
+2,LA,East Baton Rouge Parish,Baton Rouge,30.4515,-91.1871,22
+2,LA,Ouachita Parish,Monroe,32.5093,-92.1193,22
+2,LA,Calcasieu Parish,Lake Charles,30.2266,-93.2174,21
+2,LA,Lafayette Parish,Lafayette,30.2241,-92.0198,17
+2,LA,Orleans Parish,New Orleans,29.9511,-90.0715,15
+3,LA,Terrebonne Parish,Houma,29.5958,-90.7195,31
+3,LA,Orleans Parish,New Orleans,29.9511,-90.0715,29
+3,LA,East Baton Rouge Parish,Baton Rouge,30.4515,-91.1871,28
+3,LA,Rapides Parish,Alexandria,31.3113,-92.4451,25
+3,LA,Ouachita Parish,Monroe,32.5093,-92.1193,24
+3,LA,Calcasieu Parish,Lake Charles,30.2266,-93.2174,16
+3,LA,St. Tammany Parish,Covington,30.4755,-90.1009,14
+3,LA,Lafayette Parish,Lafayette,30.2241,-92.0198,12

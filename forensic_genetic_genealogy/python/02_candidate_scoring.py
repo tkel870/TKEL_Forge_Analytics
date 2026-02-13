@@ -1,8 +1,9 @@
-import sqlite3
 import pandas as pd
+from db_connect import get_connection
 
-print("Connecting to database...")
-conn = sqlite3.connect("bayou_doe.db")
+conn = get_connection()
+
+
 
 # Load clustered matches with strength
 matches = pd.read_sql_query("""
@@ -73,10 +74,12 @@ print(candidates_df)
 
 # Save outputs
 candidates_df.to_sql("candidate_rankings", conn, if_exists="replace", index=False)
-candidates_df.to_csv("forensic_genetic_genealogy/data/processed/ranked_candidate_pool.csv", index=False)
+candidates_df.to_csv("forensic_genetic_genealogy/data/processed/candidate_rankings.csv", index=False)
+
 
 conn.close()
 
 print("\nDONE.")
 print("Saved to SQLite table: candidate_rankings")
-print("Saved CSV: data/processed/ranked_candidate_pool.csv")
+print("Saved CSV: data/processed/candidate_rankings.csv")
+
