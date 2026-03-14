@@ -1,121 +1,175 @@
-TKEL Forge Analytics Engine
-Video Demo: <VIDEO URL HERE>
-Description:
+# TKEL Forge Analytics Engine (FORGE)
 
-The TKEL Forge Analytics Engine (FORGE) is a command-line business analytics tool designed to analyze sales data and generate actionable insights for decision makers. The goal of this project is to demonstrate how structured data pipelines can be used to transform raw business data into meaningful analysis, risk detection, and strategic recommendations.
+The **TKEL Forge Analytics Engine (FORGE)** is a command-line business analytics tool designed to analyze sales datasets and generate actionable insights for decision makers.
 
-FORGE was built as the final project for CS50x and was designed to simulate the type of analytics pipeline commonly used in real-world data analysis environments. The tool processes a dataset step-by-step, performing data ingestion, profiling, validation, cleaning, analysis, visualization, and reporting.
+The project demonstrates how a **structured analytics pipeline** can transform raw business data into meaningful analysis, risk detection, and strategic recommendations.
 
-The system is designed with a modular architecture so that each stage of the analytics pipeline is handled by a dedicated module. This approach makes the system easier to maintain, expand, and understand.
+FORGE was developed as the **final project for Harvard’s CS50x** and simulates the type of modular analytics workflow commonly used in real-world data environments.
 
-Problem the Project Solves
+---
 
-Businesses frequently collect large amounts of operational and sales data, but turning that data into meaningful insights can be difficult. Decision makers often need answers to questions such as:
+# Project Overview
 
-Which products generate the most profit?
+Businesses collect large volumes of operational and sales data, but turning that data into useful insights is often difficult.
 
-Which customers contribute the most revenue?
+Decision makers frequently need answers to questions such as:
 
-Are there business risks such as over-reliance on a single customer or product?
+- Which products generate the most profit?
+- Which customers contribute the most revenue?
+- Are there risks from over-reliance on a single product or customer?
+- Are products being sold at a negative margin?
 
-Are there products being sold at a negative margin?
+FORGE automatically analyzes datasets to answer these questions and produces **reports, visualizations, and recommendations** that highlight potential risks and opportunities.
 
-FORGE addresses these questions by automatically analyzing a dataset and producing structured insights, charts, and recommendations that highlight potential risks and opportunities.
+---
 
-How the Program Works
+# How the Program Works
 
-The tool is executed from the command line using the following command:
+The tool is executed from the command line:
+
 
 python cli.py --file data/raw/sample.csv --mode profit
 
-The --file argument specifies the dataset to analyze, and the --mode argument determines whether the analysis focuses on revenue or profit.
 
-When the program runs, it executes the full FORGE analytics pipeline.
+Arguments:
 
-The pipeline includes the following stages:
+| Argument | Description |
+|--------|-------------|
+| `--file` | Path to the dataset |
+| `--mode` | Determines analysis type (profit or revenue) |
 
-1. Data Ingestion
+Once executed, the program runs the full analytics pipeline.
 
-The dataset is loaded from a CSV file using the ingest.py module. This step ensures the file is successfully loaded and reports the number of rows and columns.
+---
 
-2. Dataset Profiling
+# Analytics Pipeline
 
-The profile.py module performs a quick diagnostic review of the dataset, reporting the number of rows, columns, missing values, and duplicate records. This provides immediate visibility into potential data quality issues.
+The FORGE engine processes data through several modular stages:
 
-3. Dataset Validation
+### 1. Data Ingestion
+`ingest.py` loads the dataset from a CSV file and confirms row and column counts.
 
-The validate.py module ensures that the dataset contains the required fields necessary for the analysis. If any required columns are missing, the program stops with a clear error message.
+### 2. Dataset Profiling
+`profile.py` analyzes the dataset structure and reports:
 
-4. Data Cleaning
+- row count
+- column count
+- missing values
+- duplicate records
 
-The clean.py module prepares the dataset for analysis by removing duplicate rows, converting numeric fields to proper data types, and converting date values into datetime objects.
+### 3. Dataset Validation
+`validate.py` verifies that required fields exist before analysis begins.
 
-5. Data Analysis
+### 4. Data Cleaning
+`clean.py` prepares the dataset by:
 
-The analyze.py module performs the core analytics calculations. It computes metrics such as:
+- removing duplicates
+- converting numeric columns
+- parsing date fields
 
-Total revenue
+### 5. Data Analysis
+`analyze.py` calculates key business metrics including:
 
-Total cost
+- total revenue
+- total cost
+- total profit
+- revenue by customer
+- profit by product
+- revenue concentration
+- profit concentration
 
-Total profit
+The system also detects risks such as:
 
-Revenue by customer
+- excessive reliance on one customer
+- products with negative profit margins
 
-Profit by product
+### 6. Visualization
+`visualize.py` generates charts illustrating analysis results.
 
-Customer revenue concentration
+Currently implemented:
+- Profit by product bar chart
 
-Product profit concentration
+Charts are saved as image files.
 
-The analysis also detects risk conditions such as heavy reliance on a single product or customer and products generating negative margins.
+### 7. Strategic Recommendations
+`recommend.py` generates executive-level insights when risk conditions are detected.
 
-6. Visualization
+Example:
+If a single product generates over 50% of total profit, the system recommends diversification.
 
-The visualize.py module generates charts that help illustrate the results of the analysis. Currently, the tool generates a bar chart showing profit by product and saves it as an image file.
+### 8. Report Generation
+`export.py` produces structured output including:
 
-7. Strategic Recommendations
+- summary CSV files
+- text-based analysis reports
 
-The recommend.py module evaluates the analysis results and generates executive-level recommendations when risks are detected. For example, if a single product generates more than half of total profit, the tool recommends diversifying revenue sources.
+These are saved in the `outputs/` directory.
 
-8. Report Generation
+---
 
-Finally, the export.py module generates output files including a text report and a CSV summary of product performance.
+# Project Structure
 
-These files are saved in the outputs directory.
-
-Project Structure
-
-The project is organized into several directories and modules:
 
 forge/
-    ingest.py
-    profile.py
-    validate.py
-    clean.py
-    analyze.py
-    recommend.py
-    visualize.py
-    export.py
-    cli.py
+ingest.py
+profile.py
+validate.py
+clean.py
+analyze.py
+recommend.py
+visualize.py
+export.py
 
-Each module performs a single responsibility within the analytics pipeline.
+cli.py
 
-Additional folders include:
+data/
+raw/
 
-data/       → raw datasets used for analysis
-outputs/    → generated charts and reports
-tests/      → testing scripts
-Design Decisions
+outputs/
+reports/
 
-One of the primary design decisions was to build the project as a modular analytics pipeline instead of a single large script. This allows each component of the system to be developed independently while keeping the codebase organized and readable.
+tests/
 
-Another design choice was to implement the tool as a command-line application rather than a graphical interface. This approach keeps the system lightweight while demonstrating the underlying analytics logic clearly.
 
-The modular architecture also allows the tool to be easily expanded in the future. Additional features such as more advanced visualizations, forecasting models, or integration with databases could be added without significantly altering the existing pipeline.
+Each module handles a **single responsibility** within the analytics pipeline.
 
-Conclusion
+---
 
-The TKEL Forge Analytics Engine demonstrates how programming can be used to transform raw data into meaningful insights. By combining data processing, analysis, visualization, and automated recommendations, the project provides a simplified example of a real-world analytics workflow.
+# Design Decisions
 
-The project reflects many of the core concepts learned in CS50x, including modular programming, data processing, command-line interfaces, and structured program design.
+Several architectural decisions shaped the design of FORGE.
+
+### Modular Pipeline Architecture
+Instead of writing one large script, the system was divided into independent modules representing stages of a data pipeline.
+
+Benefits:
+
+- easier maintenance
+- clearer code structure
+- easier expansion
+
+### Command Line Interface
+The project uses a command-line interface instead of a graphical interface to emphasize the underlying analytics logic while keeping the system lightweight.
+
+### Extensibility
+The architecture allows future features such as:
+
+- forecasting models
+- additional visualizations
+- database integration
+- machine learning analysis
+
+---
+
+# Conclusion
+
+The **TKEL Forge Analytics Engine** demonstrates how programming and data analysis can work together to transform raw operational data into meaningful business insights.
+
+The project reflects key concepts learned in CS50x including:
+
+- modular programming
+- structured data pipelines
+- command-line interfaces
+- data analysis workflows
+
+FORGE provides a simplified example of how analytics systems can support decision-making through automated data processing, visualization, and insight generation.uding modular programming, data processing, command-line interfaces, and structured program design.
