@@ -1,0 +1,13 @@
+Forge Analytics Report
+----------------------
+
+Total Revenue: 300
+Total Profit: 120
+
+Top Customer: C2 (Revenue: 200)
+
+Top Performing Product: P2 (Profit: 80)
+Worst Performing Product: P1 (Profit: 40)
+
+Profit Concentration: 66.7%
+WARNING: Profit is heavily concentrated in a single product.
